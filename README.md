@@ -6,12 +6,17 @@ Hello! I’m **Salvatore**, a bioinformatics enthusiast specializing in Python, 
 
 ## 🚀 Quick Links
 
-| Project                                   | Description                                        | Tech Stack                | Live / Demo       |
-| ----------------------------------------- | -------------------------------------------------- | ------------------------- | ----------------- |
-| [Bellabeat Case Study](Bellabeat-Project) | Analysis of Fitbit data for a Bellabeat case study | R, SQLite, dplyr, Tableau | Screenshot & link |
-| [Python Exercises](python-exercises)      | Curated collection of Python scripts and tools     | Python, Biopython            | —                 |
-| [SQL Practice](sql-practice)              | SQL queries and database designs                   | SQL                       | —                 |
-| [Bash Utilities](bash-scripts)            | Useful Bash scripts for automation                 | Bash                      | —                 |
+## Quick Links
+
+| Project | Description | Tech Stack |
+| ------- | ----------- | ---------- |
+| [Genomic Data Science Specialization](https://github.com/barbavegeta/Genomic_Data_Science_Specialization) | Bioinformatics analysis | Python, R, Biopython |
+| [Google Advanced Data Analytics – Salifort Motors](https://github.com/barbavegeta/Google_Advanced_Data_Analytics-Salifort_Motors) | Final project in Google Advanced Data Analytics | Python, scikit-learn, Pandas |
+| [TikTok Project – Google Advanced Data Analytics](https://github.com/barbavegeta/Tik_Tok_Project-Google_Advanced_Data_Analytics) | Final project in Google Advanced Data Analytics | Python, Pandas, Matplotlib |
+| [Bellabeat Case Study](https://github.com/barbavegeta/Bellabeat-Project) | Analysis of Fitbit data for a Bellabeat case study | R, SQLite, dplyr, Tableau | Screenshot & link |
+| [Python Exercises](https://github.com/barbavegeta/python-exercises) | Curated collection of Python scripts and tools | Python, Biopython |
+| [SQL Practice](https://github.com/barbavegeta/sql-practice) | SQL queries and database designs | SQL |
+| [Bash Utilities](https://github.com/barbavegeta/bash-scripts) | Useful Bash scripts for automation | Bash |
 
 ---
 
