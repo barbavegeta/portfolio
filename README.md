@@ -33,6 +33,13 @@ This repository serves as a central hub for my most impactful, well-documented p
 
 ## Project Highlights
 
+### **Genomic Data Science Specialization**
+- **Objective:** Gain proficiency in computational genomics through applied projects spanning multiple bioinformatics subfields.  
+- **Approach:** Completed a series of modules covering sequence alignment, genome assembly, RNA-seq analysis, variant calling, data visualisation, and database querying. Applied **Python**, **R**, and **Biopython** to process and analyse large genomic datasets.  
+- **Outcome:** Built a diverse portfolio of scripts and workflows applicable to real-world genomics research, showcasing versatility across topics such as quality control, functional annotation, and statistical interpretation of biological data.
+
+---
+
 ### **Google Advanced Data Analytics – Salifort Motors**
 - **Objective:** Build a predictive model to understand factors influencing employee attrition.  
 - **Approach:** Cleaned and transformed HR datasets with Pandas, performed exploratory analysis, engineered features, and implemented classification models using scikit-learn.  
