@@ -62,6 +62,16 @@ This repository serves as a central hub for my most impactful, well-documented p
 
 ---
 
+### **FreeCodeCamp Projects**
+- **Objective:** Complete multiple FreeCodeCamp certifications to strengthen skills in SQL, Bash scripting, Python data analysis, and scientific computing.  
+- **Approach:**  
+  - **SQL & Bash:** Developed relational database queries and automation scripts for datasets like *Periodic Table*, *World Cup*, and *Student Records*.  
+  - **Data Analysis with Python:** Applied Pandas and Matplotlib to projects such as sea-level prediction, demographic analysis, and medical data exploration.  
+  - **Scientific Computing with Python:** Created algorithmic tools including budget apps, probability calculators, Sudoku solvers, and equation solvers.  
+- **Outcome:** Built a diverse set of well-documented, reproducible projects showcasing adaptability across data manipulation, visualisation, and computational problem-solving.
+
+---
+
 ### **Python Exercises · SQL Practice · Bash Utilities**
 - **Objective:** Demonstrate versatility in scripting, querying, and automation.  
 - **Approach:** Developed modular, well-tested code with Python; created optimised SQL queries; automated workflows with Bash scripting.  
