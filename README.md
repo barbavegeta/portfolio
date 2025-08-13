@@ -1,10 +1,10 @@
-# 👋 Welcome to My Portfolio
+## My Portfolio
 
-Hello! I’m **Salvatore**, a bioinformatics enthusiast specializing in Python, R, SQL, and data visualization. This repository serves as a single-entry point to showcase my strongest, most polished projects.
+Hello! I’m **Salvatore**, a bioinformatics enthusiast specialising in Python, R, SQL, and data visualisation. This repository serves as a single-entry point to showcase my strongest, most polished projects.
 
 ---
 
-## 🚀 Quick Links
+## Quick Links
 
 ## Quick Links
 
@@ -20,27 +20,25 @@ Hello! I’m **Salvatore**, a bioinformatics enthusiast specializing in Python, 
 
 ---
 
-## 📋 About Me
+## About Me
 
-* 🎓 MSc in Cell & Gene Therapy (UCL, 2024)
-* 🎯 Interests: Precision Medicine, Bioinformatics, Network Analysis
-* 🛠️ Skills: Python, R, SQL, Bash, Git
-* 📫 How to reach me: [Email](mailto:barbagallo1@hotmail.it) | [LinkedIn](https://www.linkedin.com/in/salvatore-barbagallo-9784b9121/)
+**Education:** MSc in Cell & Gene Therapy (UCL, 2024)  
+**Interests:** Precision Medicine, Bioinformatics, Network Analysis  
+**Skills:** Python, R, SQL, Bash, Git  
+**Contact:** [Email](mailto:barbagallo1@hotmail.it) · [LinkedIn](https://www.linkedin.com/in/salvatore-barbagallo)  
+
+---
+
+## Project Highlights
+
+### **Bellabeat Case Study**
+- **What:** Comprehensive analysis of Fitbit data to derive user engagement metrics and health insights.  
+- **How:** Merged CSVs in R, handled joins carefully to avoid NAs, summarised via `dplyr`, and exported results for Tableau dashboards.  
+- **Why:** Demonstrates data cleaning, statistical summarisation, and visualisation pipeline.
 
 ---
 
-## 📗 Project Highlights
-
-### Bellabeat Case Study
-
-* **What**: Comprehensive analysis of Fitbit data to derive user engagement metrics and health insights.
-* **How**: Merged CSVs in R, handled joins carefully to avoid NAs, summarized via dplyr, exported for Tableau dashboards.
-* **Why**: Demonstrates data cleaning, statistical summarization, and visualization pipeline.
-
-### Python Exercises - SQL Practice - Bash Scripts
-
-* **What**: A selection of standalone Python scripts solving algorithmic and real-world data tasks.
-* **How**: Structured with a `main()` and helper functions, covered by `pytest` cases.
-* **Why**: Highlights coding style, testing approach, and modular design.
-
----
+### **Python Exercises · SQL Practice · Bash Utilities**
+- **What:** A selection of standalone Python scripts, SQL queries, and Bash utilities solving algorithmic and real-world data tasks.  
+- **How:** Structured with `main()` functions and helpers, covered by `pytest` cases (for Python).  
+- **Why:** Highlights coding style, testing approach, and modular design.
