@@ -10,8 +10,8 @@ Hello! I’m **Salvatore**, a bioinformatics enthusiast specialising in Python, 
 | ------- | ----------- | ---------- |
 | [Genomic Data Science Specialization](https://github.com/barbavegeta/Genomic_Data_Science_Specialization) | Bioinformatics analysis | Python, R, Biopython |
 | [Google Advanced Data Analytics – Salifort Motors](https://github.com/barbavegeta/Google_Advanced_Data_Analytics-Salifort_Motors) | Final project in Google Advanced Data Analytics | Python, scikit-learn, Pandas |
-| [Google Advanced Data Analytics-TikTok Project](https://github.com/barbavegeta/Google_Advanced_Data_Analytics-Tik_Tok_Project) | Final project in Google Advanced Data Analytics | Python, Pandas, Matplotlib |
-| [Bellabeat Case Study](https://github.com/barbavegeta/Google_Data_Analytics-Bellabeat-Project) | Analysis of Fitbit data for a Bellabeat case study | R, SQLite, dplyr, Tableau | Screenshot & link |
+| [Google Advanced Data Analytics - TikTok Project](https://github.com/barbavegeta/Google_Advanced_Data_Analytics-Tik_Tok_Project) | Final project in Google Advanced Data Analytics | Python, Pandas, Matplotlib |
+| [Google Data Analytics - Bellabeat Case Study](https://github.com/barbavegeta/Google_Data_Analytics-Bellabeat-Project) | Analysis of Fitbit data for a Bellabeat case study | R, SQLite, dplyr, Tableau | Screenshot & link |
 | [Python Exercises](https://github.com/barbavegeta/python-exercises) | Curated collection of Python scripts and tools | Python, Biopython |
 | [SQL Practice](https://github.com/barbavegeta/sql-practice) | SQL queries and database designs | SQL |
 | [Bash Utilities](https://github.com/barbavegeta/bash-scripts) | Useful Bash scripts for automation | Bash |
