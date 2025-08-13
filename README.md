@@ -6,8 +6,6 @@ Hello! I’m **Salvatore**, a bioinformatics enthusiast specialising in Python, 
 
 ## Quick Links
 
-## Quick Links
-
 | Project | Description | Tech Stack |
 | ------- | ----------- | ---------- |
 | [Genomic Data Science Specialization](https://github.com/barbavegeta/Genomic_Data_Science_Specialization) | Bioinformatics analysis | Python, R, Biopython |
