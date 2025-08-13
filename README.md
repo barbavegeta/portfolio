@@ -20,7 +20,7 @@ Hello! I’m **Salvatore**, a bioinformatics enthusiast specialising in Python, 
 
 ## About Me
 
-**Education:** MSc in Cell & Gene Therapy (University College London, 2023), BSc Biomedical Science (University of Catania, 2017)
+**Education:** MSc in Cell & Gene Therapy (University College London, 2023), BSc in Biomedical Science (University of Catania, 2017)
 **Interests:** Precision Medicine, Bioinformatics, Network Analysis  
 **Skills:** Python, R, SQL, Bash, Git  
 **Contact:** [Email](mailto:barbagallo1@hotmail.it) · [LinkedIn](https://www.linkedin.com/in/salvatore-barbagallo)  
