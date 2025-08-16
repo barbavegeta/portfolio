@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My GitHub Explorer</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; display: grid; grid-template-columns: 320px 1fr; height: 100vh; }
+    header { grid-column: 1 / -1; padding: 12px 16px; border-bottom: 1px solid #ddd; }
+    #sidebar { border-right: 1px solid #eee; overflow: auto; padding: 12px; }
+    #content { overflow: auto; padding: 16px; }
+    .repo { padding: 6px 8px; border-radius: 8px; cursor: pointer; margin-bottom: 4px; }
+    .repo:hover { background: #f6f8fa; }
+    .crumbs { font-size: 14px; color: #555; margin-bottom: 8px; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 6px 8px; border-radius: 6px; cursor: pointer; }
+    li:hover { background: #f6f8fa; }
+    .type { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #888; margin-left: 6px; }
+    pre { background: #0d1117; color: #c9d1d9; padding: 12px; border-radius: 8px; overflow: auto; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+    .muted { color: #888; }
+    .toolbar { display:flex; gap:8px; align-items:center; margin-bottom:8px; }
+    input[type="search"]{ padding:6px 8px; border:1px solid #ddd; border-radius:8px; width:100%; }
+    .hidden{ display:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>GitHub Explorer</strong>
+  </header>
+
+  <aside id="sidebar">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Filter repos..." />
+    </div>
+    <div id="repos" class="repos"></div>
+  </aside>
+
+  <main id="content">
+    <div class="crumbs" id="crumbs"></div>
+    <div id="listing"></div>
+    <div id="viewer" class="hidden"></div>
+  </main>
+
+<script>
+const GH_USER = "barbavegeta"; //
+let state = { repo: null, path: "" };
+
+async function listRepos() {
+  const res = await fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`);
+  if (!res.ok) throw new Error("Failed to load repos");
+  return res.json();
+}
+
+function renderRepos(repos) {
+  const container = document.getElementById("repos");
+  container.innerHTML = "";
+  repos.forEach(r => {
+    const div = document.createElement("div");
+    div.className = "repo";
+    div.textContent = r.full_name;
+    div.title = r.description || "";
+    div.onclick = () => openRepo(r.owner.login, r.name, "");
+    container.appendChild(div);
+  });
+
+  // simple client-side filter
+  const q = document.getElementById("search");
+  q.oninput = () => {
+    const term = q.value.toLowerCase();
+    [...container.children].forEach(child => {
+      child.style.display = child.textContent.toLowerCase().includes(term) ? "" : "none";
+    });
+  };
+}
+
+async function listContents(owner, repo, path="") {
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error("Failed to load contents");
+  return res.json();
+}
+
+function setCrumbs(owner, repo, path) {
+  const crumbs = document.getElementById("crumbs");
+  const parts = path ? path.split("/") : [];
+  let acc = "";
+  crumbs.innerHTML = `<span class="muted">${owner}/</span><strong>${repo}</strong>` + 
+    (parts.length ? " / " : "") +
+    parts.map((p,i) => {
+      acc = parts.slice(0,i+1).join("/");
+      return `<a href="#" data-path="${acc}">${p}</a>`;
+    }).join(" / ");
+
+  // navigate via crumbs
+  crumbs.querySelectorAll("a").forEach(a => {
+    a.onclick = (e) => {
+      e.preventDefault();
+      openRepo(owner, repo, a.dataset.path);
+    };
+  });
+}
+
+function showListing(items, owner, repo, path) {
+  document.getElementById("viewer").classList.add("hidden");
+  const listing = document.getElementById("listing");
+  listing.innerHTML = "";
+  const ul = document.createElement("ul");
+
+  if (path) {
+    const up = document.createElement("li");
+    up.textContent = "⬆️ ..";
+    up.onclick = () => {
+      const parent = path.split("/").slice(0,-1).join("/");
+      openRepo(owner, repo, parent);
+    };
+    ul.appendChild(up);
+  }
+
+  // sort: dirs first, then files
+  items.sort((a,b) => (a.type === b.type) ? a.name.localeCompare(b.name) : (a.type === "dir" ? -1 : 1));
+
+  items.forEach(it => {
+    const li = document.createElement("li");
+    li.innerHTML = (it.type === "dir" ? "📁 " : "📄 ") + it.name + ` <span class="type">${it.type}</span>`;
+    li.onclick = () => {
+      if (it.type === "dir") openRepo(owner, repo, (path ? path + "/" : "") + it.name);
+      else showFile(it);
+    };
+    ul.appendChild(li);
+  });
+
+  listing.appendChild(ul);
+}
+
+async function showFile(item) {
+  const viewer = document.getElementById("viewer");
+  document.getElementById("listing").innerHTML = "";
+  viewer.classList.remove("hidden");
+  viewer.innerHTML = `<div class="muted">${item.path}</div><pre><code>Loading...</code></pre><div><a href="${item.html_url}" target="_blank">Open on GitHub</a></div>`;
+  try {
+    // Prefer download_url for raw text; for binaries just link out
+    if (!item.download_url) {
+      viewer.querySelector("pre code").textContent = "Binary or unavailable preview.";
+      return;
+    }
+    const res = await fetch(item.download_url);
+    const text = await res.text();
+    viewer.querySelector("pre code").textContent = text;
+  } catch (e) {
+    viewer.querySelector("pre code").textContent = "Failed to load file.";
+  }
+}
+
+async function openRepo(owner, repo, path="") {
+  state = { repo: `${owner}/${repo}`, path };
+  setCrumbs(owner, repo, path);
+  try {
+    const items = await listContents(owner, repo, path);
+    showListing(items, owner, repo, path);
+  } catch (e) {
+    document.getElementById("listing").innerHTML = "<p>Failed to load directory.</p>";
+  }
+}
+
+(async function init(){
+  try {
+    const repos = await listRepos();
+    renderRepos(repos);
+  } catch (e) {
+    document.getElementById("repos").textContent = "Failed to load repositories.";
+  }
+})();
+</script>
+</body>
+</html>
