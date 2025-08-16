@@ -1,7 +1,6 @@
 # Portfolio
 
 Hello! I’m **Salvatore**, a bioinformatics enthusiast with a background in **biomedical science** and hands-on experience in **Python**, **R**, **SQL**, and **data visualisation**.  
-This repository serves as a central hub for my most impactful, well-documented projects, combining analytical rigour with clean, reproducible code.
 
 ---
 
